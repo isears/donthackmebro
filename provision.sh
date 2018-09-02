@@ -16,3 +16,10 @@ git clone https://github.com/longld/peda.git /home/vagrant/peda
 echo "source /home/vagrant/peda/peda.py" >> /home/vagrant/.gdbinit
 chown vagrant:vagrant /home/vagrant/.gdbinit
 chown -R vagrant:vagrant /home/vagrant/peda
+
+# rename
+echo "donthackmebro" > /etc/hostname
+sed -i 's:stretch:donthackmebro:g' /etc/hosts
+
+# restart
+reboot
