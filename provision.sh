@@ -4,7 +4,7 @@
 apt-get update
 apt-get -y upgrade
 apt-get -y install vim build-essential gcc-multilib g++-multilib gdb python3-pip \
-    default-jdk openvpn git tmux nmap curl linux-headers-$(uname -r)
+    default-jdk openvpn git tmux nmap curl valgrind linux-headers-$(uname -r)
 
 # pip packages
 pip3 install requests
