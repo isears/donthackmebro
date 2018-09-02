@@ -1,10 +1,12 @@
 #!/bin/bash
 
 # apt packages
+echo "deb http://ftp.debian.org/debian stretch-backports main contrib" > /etc/apt/sources.list.d/stretch-backports.list
 apt-get update
 apt-get -y upgrade
 apt-get -y install vim build-essential gcc-multilib g++-multilib gdb python3-pip \
-    default-jdk openvpn git tmux nmap curl valgrind linux-headers-$(uname -r)
+    default-jdk openvpn git tmux nmap curl valgrind linux-headers-$(uname -r) \
+    lxde virtualbox-guest-dkms virtualbox-guest-x11
 
 # pip packages
 pip3 install requests
@@ -39,6 +41,9 @@ fi
 # rename
 echo "donthackmebro" > /etc/hostname
 sed -i 's:stretch:donthackmebro:g' /etc/hosts
+
+# configure autologin
+sed -i 's:#autologin-user=:autologin-user=vagrant:g' /etc/lightdm/lightdm.conf
 
 # restart
 reboot
