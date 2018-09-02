@@ -11,6 +11,7 @@ Vagrant.configure("2") do |config|
     vb.cpus = 2
   end
 
+  config.vm.synced_folder "~/CTFs", "/home/vagrant/CTFs", type: "rsync"
   config.vm.provision "shell", path: "./provision.sh"
 
 end
