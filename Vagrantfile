@@ -9,10 +9,10 @@ Vagrant.configure("2") do |config|
     vb.memory = 4096
     vb.name = "donthackmebro"
     vb.cpus = 2
-    vb.gui = true
+    vb.gui = false
   end
 
-  config.vm.synced_folder "~/CTFs", "/home/vagrant/CTFs", type: "rsync"
-  config.vm.provision "shell", path: "./provision.sh"
+  config.vm.synced_folder "~/CTFs", "/home/vagrant/CTFs"
+  config.vm.provision "shell", path: "provision.sh"
 
 end
