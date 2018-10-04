@@ -4,4 +4,6 @@ A CTF-optimized vagrant environment based on debian stretch.
 
 ```bash
 vagrant up
+# If running this environment in Windows, first run command: vagrant plugin install vagrant-vbguest
+
 ```
